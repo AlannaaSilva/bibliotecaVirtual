@@ -1,0 +1,48 @@
+.libraryContainer{
+   justify-content: left;
+    padding: 7rem 2rem 3.5rem;
+}
+.userContainer{
+    align-items: center;
+    display: flex;
+    gap: 2.625rem;
+    padding-bottom: 1rem;
+}
+
+.userInfo{
+    font-family: 'roboto';
+    display: flex;
+    flex-direction: column;
+}
+
+.useName{
+    font-size: 1.5rem;
+    color: #303133;
+}
+
+.userAcesoo{
+    letter-spacing: 0.15px;
+    margin: 0rem 0 1.5rem;
+    color: #303133;
+    opacity: 0.5;
+}
+
+.Title{
+    font-family: 'roboto';
+    display: flex;
+    color: #303133;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-left: 0.8rem;
+
+}
+
+
+.cardBookContainer {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+    row-gap: 2.5rem;
+    margin-top: 3.5rem;
+}
