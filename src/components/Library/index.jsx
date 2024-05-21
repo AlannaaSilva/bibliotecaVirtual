@@ -17,6 +17,7 @@ const books = [
   editora: "Rocco",
   ano: 1997,
   estoque: 20,
+  preco: 33.00,
   descricao: "O livro conta a história de Harry Potter, um órfão criado pelos tios que descobre, em seu décimo primeiro aniversário, que é um bruxo",
   url: "https://m.media-amazon.com/images/I/81ibfYk4qmL._AC_UF1000,1000_QL80_.jpg"
 },
@@ -27,6 +28,7 @@ const books = [
   editora: "Bantam Spectra",
   ano: 1996,
   estoque: 2,
+  preco:33.00,
   descricao: "O verão pode durar décadas. O inverno, toda uma vida. E a guerra dos tronos começou. Como Guardião do Norte.",
   url: "https://m.media-amazon.com/images/I/91+1SUO3vUL._SY522_.jpg"
 },
@@ -37,6 +39,7 @@ const books = [
   editora: "WMF Martins Fontes",
   ano: 2019,
   estoque: 5,
+  preco:21.00,
   descricao: "Geralt de Rívia é um bruxo sagaz e habilidoso. Um assassino impiedoso e de sangue-frio treinado, desde a infância, para caçar e eliminar monstros. Seu único objetivo: destruir as criaturas do mal que assolam o mund",
   url: "https://m.media-amazon.com/images/I/618iEKbcBDL._SY522_.jpg"
 },
@@ -47,6 +50,7 @@ const books = [
   editora: "HarperCollins",
   ano: 2018,
   estoque: 15,
+  preco:42.00,
   descricao: "A guerra entre os Povos Livres da Terra-média e Sauron, o Senhor Sombrio da terra de Mordor, chega a seu clímax neste terceiro volume do romance O Senhor dos Anéis. As",
   url: "https://m.media-amazon.com/images/I/71+4uDgt8JL._SY522_.jpg"
 },
@@ -56,6 +60,7 @@ const books = [
   autor: "J.R.R. Tolkien",
   editora: "HarperCollins",
   ano: 2018,
+  preco:13.00,
   descricao: "A guerra entre os Povos Livres da Terra-média e Sauron, o Senhor Sombrio da terra de Mordor, chega a seu clímax neste terceiro volume do romance O Senhor dos Anéis. As",
   url: "https://m.media-amazon.com/images/I/71+4uDgt8JL._SY522_.jpg"
 },
@@ -65,6 +70,7 @@ const books = [
   autor: "J.R.R. Tolkien",
   editora: "HarperCollins",
   ano: 2018,
+  preco:22.00,
   descricao: "A guerra entre os Povos Livres da Terra-média e Sauron, o Senhor Sombrio da terra de Mordor, chega a seu clímax neste terceiro volume do romance O Senhor dos Anéis. As",
   url: "https://m.media-amazon.com/images/I/71+4uDgt8JL._SY522_.jpg"
 }
@@ -125,6 +131,7 @@ export function Library() {
             editora={book.editora}
             ano={book.ano}
             estoque={book.estoque}
+            preco = {book.preco}
           />
         )
        })}

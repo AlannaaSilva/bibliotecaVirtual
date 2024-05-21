@@ -44,7 +44,9 @@ export function AddNewBookModal() {
         <TextField id="autor" label="Autor do livro" variant="filled" />
         <TextField id="editora" label="Editora" variant="filled" />
         <TextField id="ano" label="Ano" variant="filled" /> 
+         <TextField id="url" label="Preço" variant="filled" />
         <TextField id="url" label="Url imagem da capa do livro" variant="filled" />
+      
       </Box>
 
       <Box sx={{ m:1 }}>

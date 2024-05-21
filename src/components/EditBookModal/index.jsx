@@ -20,7 +20,7 @@ const style = {
 };
 
 
-export function EditBookModal({titulo, autor, url, editora, ano, estoque, id}){
+export function EditBookModal({titulo, autor, url, editora, ano, preco, estoque, id}){
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -56,6 +56,7 @@ export function EditBookModal({titulo, autor, url, editora, ano, estoque, id}){
         <TextField value= {autor}id="autor" label="Autor do livro" variant="filled" />
         <TextField value= {editora}id="editora" label="Editora" variant="filled" />
         <TextField value={ano} id="ano" label="Ano" variant="filled" /> 
+        <TextField value={preco} id="preco" label="Preço R$" variant="filled" /> 
         <TextField value={url} id="url" label="Url imagem da capa do livro" variant="filled" />
       </Box>
          <Box sx={{ '& > :not(style)': { m: 1 }, display: 'flex',

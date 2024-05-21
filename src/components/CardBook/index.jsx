@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import {DeleteBookModal} from '../DeleteBookModal';
 import { EditBookModal } from '../EditBookModal';
 
-export function CardBook({titulo, autor, url, editora, ano, estoque, id}) {
+export function CardBook({titulo, autor, url, editora, ano, estoque, id, preco}) {
   return (
         <Card sx={{ maxWidth: 300 }}>
           <CardMedia
@@ -33,6 +33,9 @@ export function CardBook({titulo, autor, url, editora, ano, estoque, id}) {
             <Typography gutterBottom variant="body1" component="div">
              Estoque: {estoque}
             </Typography>
+            <Typography gutterBottom variant="body1" component="div">
+             Preço: {preco}
+            </Typography>
             <div style={{ display: 'flex', flexDirection: 'row', gap: '10px', marginTop: '20px', alignItems:'center'}}> 
                 <DeleteBookModal/>
                 <EditBookModal
@@ -42,7 +45,8 @@ export function CardBook({titulo, autor, url, editora, ano, estoque, id}) {
                   url={url}
                   editora={editora}
                   ano={ano}
-                  estoque={estoque}/>
+                  estoque={estoque}
+                  preco={preco}/>
             </div>
           </CardContent>
 
