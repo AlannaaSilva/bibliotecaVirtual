@@ -1,4 +1,15 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization");
+
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    // Return a 200 response for preflight requests
+    http_response_code(200);
+    exit();
+}
+
+
 include ('connection.php');
 
 

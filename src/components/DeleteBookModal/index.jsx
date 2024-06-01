@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import DeleteIcon from '@mui/icons-material/Delete';
+import axios from 'axios';
 
 const style = {
   position: 'absolute',
@@ -16,21 +17,43 @@ const style = {
   p: 4,
 };
 
-export  function DeleteBookModal() {
+export function DeleteBookModal({ livroId }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+
+  const handleDelete = () => {
+    console.log(livroId)
+    axios.post('http://localhost/backend/delete.php', { livro_id: livroId })
+      .then(response => {
+        if (response.data.status === 'success') {
+          setOpen(false);
+          window.location.reload();
+
+        } else {
+          console.error(response.data.error)
+        }
+      })
+      .catch(error => {
+        console.error('There was an error deleting the book!', error);
+
+      });
+
+    handleClose()
+  };
+
+
   return (
     <div>
-      <Button 
+      <Button
         onClick={handleOpen}
-        variant="contained" 
-        startIcon={<DeleteIcon />} 
-        size="small" 
-        style={{ backgroundColor: '#DE1515', color: 'white', fontSize:'10px'}}>
+        variant="contained"
+        startIcon={<DeleteIcon />}
+        size="small"
+        style={{ backgroundColor: '#DE1515', color: 'white', fontSize: '10px' }}>
         Excluir acervo
-        </Button>
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -42,28 +65,29 @@ export  function DeleteBookModal() {
             Deseja excluir?
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-           Se você prosseguir irá excluir <strong>todos</strong> os livros dessa coleção
+            Se você prosseguir irá excluir <strong>todos</strong> os livros dessa coleção
           </Typography>
-          <Box sx={{display: 'flex', flexDirection: 'row', gap: '10px', marginTop: '20px', alignItems:'center'}}>
-            <Button 
-              variant="contained"
-              size="large" 
-              style={{ backgroundColor: '#223D3C', color: 'white' }}
-              >
-             EXCLUIR
-           </Button>
+          <Box sx={{ display: 'flex', flexDirection: 'row', gap: '10px', marginTop: '20px', alignItems: 'center' }}>
             <Button
               variant="contained"
-              size="large" 
+              size="large"
+              style={{ backgroundColor: '#223D3C', color: 'white' }}
+              onClick={handleDelete}
+            >
+              EXCLUIR
+            </Button>
+            <Button
+              variant="contained"
+              size="large"
               style={{ backgroundColor: '#A03030', color: 'white' }}
-              onClick={()=> handleClose(true)}
-              >
-             CANCELAR
-           </Button>
+              onClick={() => handleClose(true)}
+            >
+              CANCELAR
+            </Button>
           </Box>
-          
-        </Box>          
-       
+
+        </Box>
+
       </Modal>
     </div>
   );
