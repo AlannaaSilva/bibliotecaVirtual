@@ -4,9 +4,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
-import IconButton from '@mui/material/IconButton';
 import axios from 'axios';
 import { useState } from 'react';
 import qs from 'qs';
@@ -34,7 +31,7 @@ export function EditBookModal({ titulo, autor, url, editora, ano, preco, estoque
     autor: autor,
     editora_nome: editora,
     ano: ano,
-    disponivel: 1, // assuming 1 means available by default
+    disponivel: 1, // assumindo que 1 significa disponível por padrão
     quantidade: estoque,
     preco: preco,
     url_livro: url,
@@ -52,7 +49,7 @@ export function EditBookModal({ titulo, autor, url, editora, ano, preco, estoque
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Convert ano and preco to numbers
+    // Converter ano e preço em números
     const dataToSend = {
       ...formData,
       ano: Number(formData.ano),
@@ -71,7 +68,7 @@ export function EditBookModal({ titulo, autor, url, editora, ano, preco, estoque
       .then(response => {
         if (response.data.status === 'success') {
           console.log('Book added successfully:', response.data.message);
-          // Refresh the page
+          // Recarregue a página
         }
         window.location.href = '/';
       })

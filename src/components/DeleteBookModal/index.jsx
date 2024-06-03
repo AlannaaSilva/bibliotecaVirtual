@@ -29,11 +29,10 @@ export function DeleteBookModal({ livroId }) {
       .then(response => {
         if (response.data.status === 'success') {
           setOpen(false);
-          window.location.reload();
 
-        } else {
-          console.error(response.data.error)
         }
+        window.location.href = '/';
+
       })
       .catch(error => {
         console.error('There was an error deleting the book!', error);
